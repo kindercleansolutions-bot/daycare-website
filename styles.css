@@ -12,7 +12,7 @@
 body{font-family:var(--font-sans);margin:0;background:var(--bg);color:var(--secondary);-webkit-font-smoothing:antialiased}
 .container{max-width:var(--maxw);margin:0 auto;padding:36px}
 .header{display:flex;align-items:center;gap:18px;padding:18px 0}
-.logo-img{height:64px}
+.logo-img{height:120px}
 .nav{margin-left:auto;display:flex;gap:18px;align-items:center}
 a.btn{background:var(--primary);color:white;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
 a.link{color:var(--secondary);text-decoration:none;padding:8px 10px;border-radius:8px}
@@ -38,5 +38,5 @@ a.link{color:var(--secondary);text-decoration:none;padding:8px 10px;border-radiu
   .features{grid-template-columns:repeat(1,1fr)}
   .services-list{grid-template-columns:repeat(1,1fr)}
   .grid-2{grid-template-columns:1fr}
-  .logo-img{height:52px}
+  .logo-img{height:69px}
 }
