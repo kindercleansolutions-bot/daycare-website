@@ -25,39 +25,93 @@
         <h1 class="h1">Request a Quote</h1>
         <p class="lead">Send us your details and we'll reply promptly to schedule an on-site estimate or provide a tailored plan.</p>
 
-        <!-- Netlify form -->
-        <form id="contactForm" name="contact" method="POST" data-netlify="true" class="contact-form" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
-          <p class="small"><label>Business / Centre name<br><input type="text" name="business" required></label></p>
-          <p class="small"><label>Contact name<br><input type="text" name="name" required></label></p>
-          <p class="small"><label>Email (we will reply)<br><input type="email" name="email" required></label></p>
-          <p class="small"><label>Phone<br><input type="text" name="phone"></label></p>
-          <p class="small"><label>Service interest<br>
-            <select name="service">
-              <option>Daily/Weekly Cleaning</option>
-              <option>Washroom Disinfection</option>
-              <option>Floors & Carpets</option>
-              <option>Garbage Disposal</option>
-              <option>High-touch Disinfection</option>
-              <option>Monthly Deep Cleaning</option>
-            </select>
-          </label></p>
-          <p class="small"><label>Message / special requests<br><textarea name="message" rows="5"></textarea></label></p>
-          <p><button class="btn" type="submit">Send message</button></p>
-        </form>
+        <!-- Netlify Contact Form -->
+<form 
+  name="contact" 
+  method="POST" 
+  data-netlify="true" 
+  data-netlify-honeypot="bot-field" 
+  class="contact-form"
+>
+  <!-- Hidden Netlify form name -->
+  <input type="hidden" name="form-name" value="contact">
 
-        <p class="small" style="margin-top:12px"><strong>Email:</strong> Kindercleansolutions@gmail.com</p>
-      </div>
+  <!-- Hidden spam trap -->
+  <p class="hidden" style="display:none;">
+    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+  </p>
 
-      <aside class="card">
-        <h3 style="margin-top:0">Contact & Info</h3>
-        <p class="small"><strong>Email:</strong> Kindercleansolutions@gmail.com</p>
-        <p class="small"><strong>Service area:</strong> Canada</p>
-        <p class="small"><strong>Availability:</strong> Early mornings & evenings available to suit daycare hours</p>
-        <p class="small"><strong>Note:</strong> All staff are background checked and insured for childcare facilities.</p>
-      </aside>
-    </section>
-  </main>
+  <p class="small">
+    <label>Business / Centre name<br>
+      <input type="text" name="business" required>
+    </label>
+  </p>
+
+  <p class="small">
+    <label>Contact name<br>
+      <input type="text" name="name" required>
+    </label>
+  </p>
+
+  <p class="small">
+    <label>Email (we will reply)<br>
+      <input type="email" name="email" required>
+    </label>
+  </p>
+
+  <p class="small">
+    <label>Phone<br>
+      <input type="text" name="phone">
+    </label>
+  </p>
+
+  <p class="small">
+    <label>Service interest<br>
+      <select name="service" required>
+        <option>Daily/Weekly Cleaning</option>
+        <option>Washroom Disinfection</option>
+        <option>Floors & Carpets</option>
+        <option>Garbage Disposal</option>
+        <option>High-touch Disinfection</option>
+        <option>Monthly Deep Cleaning</option>
+      </select>
+    </label>
+  </p>
+
+  <p class="small">
+    <label>Message / special requests<br>
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+  </p>
+
+  <p>
+    <button class="btn" type="submit">Send message</button>
+  </p>
+
+  <!-- Success message (Netlify redirect-free method) -->
+  <p id="successMessage" class="small" style="color:green; display:none; font-weight:600;">
+    Thank you! Your message has been sent. We'll get back to you shortly.
+  </p>
+</form>
+
+<script>
+  // Optional: Show a success message without redirect
+  const form = document.querySelector('form[name="contact"]');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: formData
+    }).then(() => {
+      document.getElementById("successMessage").style.display = "block";
+      form.reset();
+    }).catch(() => {
+      alert("There was an issue sending your message. Please try again.");
+    });
+  });
+</script>
 
   <footer class="footer">
     <div class="container" style="display:flex;align-items:center;justify-content:space-between">
