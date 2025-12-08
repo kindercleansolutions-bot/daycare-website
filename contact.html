@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact — KinderClean Solutions</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="container header">
+    <img src="assets/logo.png" alt="KinderClean Solutions logo" class="logo-img">
+    <nav class="nav">
+      <a class="link" href="index.html">Home</a>
+      <a class="link" href="services.html">Services</a>
+      <a class="link" href="deep.html">Deep Cleaning</a>
+      <a class="link" href="about.html">About</a>
+      <a class="link" href="contact.html">Contact</a>
+      <a class="btn" href="contact.html">Request Quote</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section card grid-2">
+      <div>
+        <h1 class="h1">Request a Quote</h1>
+        <p class="lead">Send us your details and we'll reply promptly to schedule an on-site estimate or provide a tailored plan.</p>
+
+        <!-- Netlify form -->
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" class="contact-form" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="small"><label>Business / Centre name<br><input type="text" name="business" required></label></p>
+          <p class="small"><label>Contact name<br><input type="text" name="name" required></label></p>
+          <p class="small"><label>Email (we will reply)<br><input type="email" name="email" required></label></p>
+          <p class="small"><label>Phone<br><input type="text" name="phone"></label></p>
+          <p class="small"><label>Service interest<br>
+            <select name="service">
+              <option>Daily/Weekly Cleaning</option>
+              <option>Washroom Disinfection</option>
+              <option>Floors & Carpets</option>
+              <option>Garbage Disposal</option>
+              <option>High-touch Disinfection</option>
+              <option>Monthly Deep Cleaning</option>
+            </select>
+          </label></p>
+          <p class="small"><label>Message / special requests<br><textarea name="message" rows="5"></textarea></label></p>
+          <p><button class="btn" type="submit">Send message</button></p>
+        </form>
+
+        <p class="small" style="margin-top:12px"><strong>Email:</strong> Kindercleansolutions@gmail.com</p>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Contact & Info</h3>
+        <p class="small"><strong>Email:</strong> Kindercleansolutions@gmail.com</p>
+        <p class="small"><strong>Service area:</strong> Canada</p>
+        <p class="small"><strong>Availability:</strong> Early mornings & evenings available to suit daycare hours</p>
+        <p class="small"><strong>Note:</strong> All staff are background checked and insured for childcare facilities.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;gap:12px;align-items:center">
+        <img src="assets/logo.png" alt="logo" style="height:48px">
+        <div>
+          <div style="font-weight:700">KinderClean Solutions</div>
+          <div class="small">Eco-friendly daycare cleaning • Canada</div>
+        </div>
+      </div>
+      <div class="small">© {2025} KinderClean Solutions</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

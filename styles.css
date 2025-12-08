@@ -1,0 +1,42 @@
+/* styles.css - KinderClean Solutions */
+:root{
+  --primary: #7AC943;
+  --secondary: #1F2C33;
+  --bg: #F7F9F8;
+  --accent: #DFF3D6;
+  --radius: 12px;
+  --maxw: 1100px;
+  --font-sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{font-family:var(--font-sans);margin:0;background:var(--bg);color:var(--secondary);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:0 auto;padding:36px}
+.header{display:flex;align-items:center;gap:18px;padding:18px 0}
+.logo-img{height:64px}
+.nav{margin-left:auto;display:flex;gap:18px;align-items:center}
+a.btn{background:var(--primary);color:white;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+a.link{color:var(--secondary);text-decoration:none;padding:8px 10px;border-radius:8px}
+.hero{display:flex;align-items:center;gap:40px;padding:30px 0}
+.hero-left{flex:1}
+.hero-right{flex:1;display:flex;justify-content:center}
+.card{background:white;border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(31,44,51,0.06)}
+.h1{font-size:34px;margin:8px 0 12px;color:var(--secondary)}
+.lead{font-size:18px;color:rgba(31,44,51,0.8)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.feature{background:linear-gradient(180deg,var(--accent),white);padding:14px;border-radius:12px}
+.services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.service-item{background:white;border-radius:12px;padding:12px;box-shadow:0 4px 14px rgba(31,44,51,0.04)}
+.section{margin:36px 0}
+.footer{background:linear-gradient(180deg,white,var(--bg));padding:24px;border-top:1px solid rgba(31,44,51,0.04);margin-top:40px}
+.contact-form input, .contact-form textarea{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(31,44,51,0.08);font-size:15px}
+.grid-2{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+.badge{display:inline-block;padding:8px 12px;background:var(--primary);color:white;border-radius:999px;font-weight:700}
+.testimonials{display:flex;gap:12px;flex-direction:column}
+.small{font-size:14px;color:rgba(31,44,51,0.7)}
+@media (max-width:880px){
+  .hero{flex-direction:column}
+  .features{grid-template-columns:repeat(1,1fr)}
+  .services-list{grid-template-columns:repeat(1,1fr)}
+  .grid-2{grid-template-columns:1fr}
+  .logo-img{height:52px}
+}
